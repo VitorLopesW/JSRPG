@@ -1,6 +1,7 @@
 body {
 background-color: rgb(10, 10, 10);
-
+overflow-y: hidden; /* Hide vertical scrollbar */
+overflow-x: hidden; /* Hide horizontal scrollbar */ 
 }
 
 .Master-Container {
