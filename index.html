@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D6</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="Master-Container"> <!--div qeu engloba tudo-->
+
+<div class="board"> <!--pagina principal do jogo-->
+
+<div id="display"> <!--display onde fica os efeitos do JS-->
+</div> <!--display onde fica os efeitos do JS-->
+
+<div> <h1>Character </h1> </div>
+
+<div class="Character-Creation "> <!--logica para mostrar os personagens-->
+<div id= "CharacterCreationBarbarian" class="optionA brd" onclick="description(barbarian)">Barbarian</div>
+<div id= "CharacterCreationWarrior" class="optionB brd" onclick="description(warrior)">Warrior</div>
+<div id= "CharacterCreationMage" class="optionC brd" onclick="description(wizard)">Wizard</div>
+</div>
+<div class="Master-Txt"> <!--div para os textos da crianção de personagem -->
+<h3 class="flavor-Txt">"The clans are marching against the law bagpipers play the tunes of war death or glory I will find
+    rebellion on my mind!" 
+    <br>
+    <h3 class="Ability-Txt">Your warrior is a formidable fighter, skilled in both close combat and ranged warfare.
+        never backing down from a challenge. With a strong sense of justice and a powerful sense of honor.
+        <br>
+ </div> <!--div para os textos da crianção de personagem -->
+<img src="raw arts\battlecry.png" alt="a warrior painted with blue ink" class="CharacterImg">
+
+<br></br>
+
+<div class="Flex-Botton"> <!--parte de baixo da imagem-->
+    <div>
+    <input placeholder="put your name here"> 
+    <div>name: </div>
+    </div>
+
+    </div>
+
+
+<br></br>
+
+<div class="Flex-Botton"> <!--parte de baixo da imagem-->
+<div class="Flex-Sex">
+<div class="Sex">♂</div><div class="Sex-Choosen">♀</div>
+</div>
+<div class="Next">Next ▶</div>
+</div>
+
+</div>   <!--pagina principal do jogo-->
+
+
+</div> <!--div qeu engloba tudo-->
+</body>
+<script src="objects.js"></script>
+<script src="script.js"></script>
+</html>

@@ -1,0 +1,105 @@
+body {
+background-color: rgb(10, 10, 10);
+
+}
+
+.Master-Container {
+    width: auto;
+    max-width: 500px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.board{
+    margin-top: 20px;
+    background-color: rgb(27, 27, 27);
+    width: auto;
+    height: auto;
+
+    color: aliceblue;
+    text-align: center;
+}
+
+.Character-Creation {
+    display: flex;
+    justify-content: center;
+     font-size: 30px;   
+     gap: 10px;
+}
+
+.brd {
+    border: 1px dotted aliceblue;
+}
+
+.Master-Txt {
+    padding: 20px;
+}
+
+.flavor-Txt {
+    font-style: italic;
+    text-align: justify;
+}
+
+.Ability-Txt {
+    font-size: 16px;
+    text-align: justify;
+}
+
+.CharacterImg {
+    width: 98%;
+    height: auto;
+    max-width: 500px;
+    border: 2px solid white;
+}
+
+.Flex-Botton {
+    display: flex;
+    justify-content: space-between;
+
+    margin-left: 19px;
+    margin-right: 19px;
+    
+
+}
+
+.Flex-Sex {
+    display: flex;
+    justify-content: space-between;
+
+
+    margin-left: 3px;
+    width: 100px;
+
+}
+
+.Sex {
+    font-family: fantasy;
+    font-size: 30px;
+    font-weight: 100;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: aliceblue;
+    color: rgb(13, 13, 13);
+    text-align: center;
+
+}
+
+.Sex-Choosen {
+    font-family: fantasy;
+    font-size: 30px;
+    font-weight: 100;
+    width: 40px;
+    height: 40px;
+    border: 2px solid aliceblue;
+    border-radius: 100%;
+    background-color: rgb(10, 10, 10);
+    color: aliceblue;
+    text-align: center;
+
+}
+
+.Next {
+    font-size: 40px;
+}
