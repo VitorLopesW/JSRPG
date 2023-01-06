@@ -72,6 +72,9 @@
     
 }
 
+.font-S {
+    font-size: 11px
+}
 
 .font-L {
     font-size: 20px
@@ -83,4 +86,8 @@
 
 .height50px {
     height: 50px!important;
+}
+
+.txt-alignLeft {
+    text-align: left;
 }

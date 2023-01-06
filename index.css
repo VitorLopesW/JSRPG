@@ -46,3 +46,12 @@
     border-bottom: 1px solid aliceblue;
     transition: none;
 }
+
+.faceArt {
+    width: 150px;
+    height: 150px;
+}
+
+.input-style-one {
+    width: 100px;
+}

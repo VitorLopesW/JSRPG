@@ -13,3 +13,7 @@ const mage = {
     'imgBigFemale': '<img class="borderHorizontal" src="raw arts/mage2.png">'
 
 }
+
+const playerObject = {
+    name: '',
+}

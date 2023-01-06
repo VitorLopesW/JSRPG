@@ -1,6 +1,6 @@
 sexMale = true;
 let globalChoice = '';
-
+charaterCreationPart2('mage', 'female')
 
 
 function newGame(){
@@ -107,7 +107,14 @@ function charaterCreationPart1(choice) {
     d.innerHTML = '<p  class="margin10 font-XL next-btn" onclick="charaterCreationPart2(' + "'" + choice + "'" + " ,'" + gender + "'" + ')">Next</p>'
 }
 function charaterCreationPart2(choice, gender) {
-    console.log(choice + gender)
+    let newGame = document.getElementById('newGame'); //deletar depois :D
+    newGame.style.display = 'none'; //deletar depois :D
+    let partThree = document.getElementById('partThree'); //deletar depois :D
+    partThree.style.display = 'block'; //deletar depois :D
+    playerObject['Class'] = choice; 
+    playerObject['sex'] = gender; 
+    console.log(playerObject)
+
 
 }
 
