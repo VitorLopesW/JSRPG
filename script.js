@@ -53,10 +53,12 @@ function characterInfo(char) {
 }
 
 function charaterCreationPart1(choice) {
+    window.scrollTo(0,0); 
     let a = document.getElementById('partOne');
     let b = document.getElementById('partTwo');
     let c = document.getElementById('imgSex');
     let d = document.getElementById('divNextBtn2');
+    let gender = '';
     b.style.display = 'block';
     a.style.display = 'none';
   
@@ -69,33 +71,44 @@ function charaterCreationPart1(choice) {
     if(choice == 'barbarian'){
         if(sexMale == true){
             c.innerHTML = barbarian.imgBig;
+            gender = 'male';
         }
         else {
             c.innerHTML = barbarian.imgBigFemale;
+            gender = 'female'
         }
 
     }
     else if(choice =='warrior'){
         if(sexMale == true){
             c.innerHTML = warrior.imgBig;
+            gender = 'male';
         }
         else {
             c.innerHTML = warrior.imgBigFemale;
+            gender = 'female';
+ 
         }
 
     }
     else {
         if(sexMale == true){
             c.innerHTML = mage.imgBig;
+            gender = 'male';
 
         }
         else {
             c.innerHTML = mage.imgBigFemale;
+            gender = 'female';
 
         }
         
     }
-    d.innerHTML = '<p  class="margin10 font-XL next-btn" onclick="charaterCreationPart1(' + "'" + 'char'+ "'" + ')">Next</p>'
+    d.innerHTML = '<p  class="margin10 font-XL next-btn" onclick="charaterCreationPart2(' + "'" + choice + "'" + " ,'" + gender + "'" + ')">Next</p>'
+}
+function charaterCreationPart2(choice, gender) {
+    console.log(choice + gender)
+
 }
 
 function sexClick(sex) {

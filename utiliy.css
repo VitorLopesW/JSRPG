@@ -78,10 +78,9 @@
 }
 
 .font-XL {
-    font-size: 40px
+    font-size: 40px!important;
 }
 
 .height50px {
     height: 50px!important;
-    gap: 1px!important;
 }
