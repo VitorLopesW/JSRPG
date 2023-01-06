@@ -1,6 +1,6 @@
 sexMale = true;
-let globalChoice = 'warrior';
-charaterCreationPart1('mage') 
+let globalChoice = '';
+
 
 
 function newGame(){
@@ -15,7 +15,7 @@ function characterInfo(char) {
     let y = document.getElementById('flavorTextCharacterCreation')
     let z = document.getElementById('summaryTextCharacterCreation')
     let a = document.getElementById('divNextBtn')
-    globalChoice = 'char'
+    globalChoice = char
     switch(char) {
         case 'barbarian':
             classbtnRemove() // remove Class Btn and add SummartTextCharracterCreation borderHorizontal
@@ -53,8 +53,6 @@ function characterInfo(char) {
 }
 
 function charaterCreationPart1(choice) {
-    let y = document.getElementById('newGame'); // deletar isso no futuro!
-    y.style.display = 'none'; // deletar isso no futuro!
     let a = document.getElementById('partOne');
     let b = document.getElementById('partTwo');
     let c = document.getElementById('imgSex');
