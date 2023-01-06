@@ -1,0 +1,18 @@
+:root {
+    --clr-dark: 0 0% 8%;
+    --clr-darkGrey: 0 0% 12%;
+    --clr-light: 210 6% 95%;
+    --clr-white: 0 0% 100%;
+}
+
+
+
+.bg-black{ background-color: hsl( var(--clr-dark) );}
+.bg-alice { background-color: aliceblue;}
+.bg-white { background-color: hsl( var(--clr-white) );}
+.bg-darkGrey{ background-color: hsl( var(--clr-darkGrey) );}
+
+.text-black { color: hsl( var(--clr-dark) );}
+.text-alice { color: aliceblue;}
+.text-white { color: hsl( var(--clr-white) );}
+.text-darkGrey{ background-color: hsl( var(--clr-darkGrey) );}
