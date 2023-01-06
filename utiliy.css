@@ -73,7 +73,7 @@
 }
 
 .font-S {
-    font-size: 11px
+    font-size: 18px
 }
 
 .font-L {
@@ -90,4 +90,8 @@
 
 .txt-alignLeft {
     text-align: left;
+}
+
+.margin2 {
+    margin: 2px;
 }
