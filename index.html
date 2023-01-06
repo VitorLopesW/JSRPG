@@ -16,8 +16,8 @@
     <div onclick="newGame()" class="text-alice txt-align-center font-L" id='newGame'>New Game?</div>
 <div id='partOne' class='displayNone'>
         <link rel="preload" as="image" href="raw arts\barbarian.png"> <!--Preload character arts-->
-        <link rel="preload" as="image" href="raw arts\battlecry.png" /> <!--Preload character arts-->
-        <link rel="preload" as="image" href="raw arts\mage.png" /> <!--Preload character arts-->
+        <link rel="preload" as="image" href="raw arts\battlecry.png"> <!--Preload character arts-->
+        <link rel="preload" as="image" href="raw arts\mage.png"> <!--Preload character arts-->
     <div class="flex jus-center">
         <div class="bg-darkGrey heightMax ">
             <div class='text-alice txt-align-center font-L max-width'>
@@ -50,25 +50,30 @@
         </div>
 
     </div>
-</div>
+</div> <!--Part 1-->
+
 <div id='partTwo' class='displayNone'>
     <div class="flex jus-center">
         <div class="bg-darkGrey heightMax ">
             <div class='text-alice txt-align-center font-L max-width'>
                 
                 <div class="margin10">      
-                    Choose your gender: 
+                    Choose your sex: 
                 </div>
-
+                    <div class="flex jus-center">
+                        <div class="class-btn height50px margin10" onclick="sexClick('male')" id="sexClickMale">Male</div><div class="height50px class-btn margin10" onclick="sexClick('female')" id="sexClickFemale">female</div>
+                    </div>
+                    <div id='imgSex'>
+                    </div>
+                    <div id="divNextBtn2"></div> <!--Div crianção do NextBtn--> 
             </div>
         </div>
 
     </div>
-</div>
+</div> <!--Part 2-->
 
 
 </body>
-<script src="preload.js"></script>
 <script src="objects.js"></script>
 <script src="Script.js"></script>
 </html>

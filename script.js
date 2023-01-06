@@ -1,3 +1,8 @@
+sexMale = true;
+let globalChoice = 'warrior';
+charaterCreationPart1('mage') 
+
+
 function newGame(){
 let i = document.getElementById('partOne');
 let y = document.getElementById('newGame');
@@ -5,12 +10,12 @@ i.style.display = 'block';
 y.style.display = 'none';
 }
 
-
 function characterInfo(char) {
     let i = document.getElementById('bigChar')
     let y = document.getElementById('flavorTextCharacterCreation')
     let z = document.getElementById('summaryTextCharacterCreation')
     let a = document.getElementById('divNextBtn')
+    globalChoice = 'char'
     switch(char) {
         case 'barbarian':
             classbtnRemove() // remove Class Btn and add SummartTextCharracterCreation borderHorizontal
@@ -48,11 +53,55 @@ function characterInfo(char) {
 }
 
 function charaterCreationPart1(choice) {
-let a = document.getElementById('partOne');
-let b = document.getElementById('partTwo');
-b.style.display = 'block';
-a.style.display = 'none';
+    let y = document.getElementById('newGame'); // deletar isso no futuro!
+    y.style.display = 'none'; // deletar isso no futuro!
+    let a = document.getElementById('partOne');
+    let b = document.getElementById('partTwo');
+    let c = document.getElementById('imgSex');
+    let d = document.getElementById('divNextBtn2');
+    b.style.display = 'block';
+    a.style.display = 'none';
+  
+    sexMale == true ? document.getElementById("sexClickMale").classList.add('class-btnActive') + 
+    document.getElementById("sexClickFemale").classList.remove('class-btnActive') : 
+    document.getElementById("sexClickFemale").classList.add('class-btnActive') + 
+    document.getElementById("sexClickMale").classList.remove('class-btnActive');
+        
 
-console.log(choice)
+    if(choice == 'barbarian'){
+        if(sexMale == true){
+            c.innerHTML = barbarian.imgBig;
+        }
+        else {
+            c.innerHTML = barbarian.imgBigFemale;
+        }
+
+    }
+    else if(choice =='warrior'){
+        if(sexMale == true){
+            c.innerHTML = warrior.imgBig;
+        }
+        else {
+            c.innerHTML = warrior.imgBigFemale;
+        }
+
+    }
+    else {
+        if(sexMale == true){
+            c.innerHTML = mage.imgBig;
+
+        }
+        else {
+            c.innerHTML = mage.imgBigFemale;
+
+        }
+        
+    }
+    d.innerHTML = '<p  class="margin10 font-XL next-btn" onclick="charaterCreationPart1(' + "'" + 'char'+ "'" + ')">Next</p>'
 }
 
+function sexClick(sex) {
+    sex == 'male' ? sexMale = true : sexMale = false;
+    charaterCreationPart1(globalChoice)
+
+}
