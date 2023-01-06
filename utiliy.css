@@ -51,5 +51,32 @@
 }
 
 .heightMax {
-    height: 100vh;
+    height: 101vh;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.marginHorizontal {
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.borderHorizontal {
+ 
+    border-width: 1px;
+    border-style: solid;
+    border-image: linear-gradient(90deg, hsl( var(--clr-darkGrey) ), aliceblue, hsl( var(--clr-darkGrey) ));
+    border-image-slice: 1;
+    
+}
+
+
+.font-L {
+    font-size: 20px
+}
+
+.font-XL {
+    font-size: 40px
 }

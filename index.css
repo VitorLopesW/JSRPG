@@ -1,7 +1,4 @@
 
-.font-L {
-    font-size: 20px
-}
 
 .class-btn {
     width: 100px;
@@ -33,4 +30,19 @@
 
 .max-width {
  width: 400px;
+}
+
+.next-btn {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid rgb(17, 17, 17);
+    border-bottom: 1px solid rgb(17, 17, 17);
+
+}
+
+.next-btn:hover {
+    background-color: rgba(235, 246, 255, 0.247);
+    border-top: 1px solid aliceblue;
+    border-bottom: 1px solid aliceblue;
+    transition: none;
 }
