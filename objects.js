@@ -25,6 +25,22 @@ const charTomatoes = [
 
 
 const playerObject = {
+        "name": "Davian",
+        "class": "mage",
+        "sex": "male",
+        "str": 0,
+        "dex": 1,
+        "con": -1,
+        "int": 6,
+        "wis": 3,
+        "cha": 3,
+        "subclass": "icyWizard",
+        "trait": "Smart",
+        "Portrait": "<img src='raw arts/mageFace.png' class='faceArt'>",
+        "fullArt": "<img src='raw arts/mage.png'>"
+}
+
+const playerObjectBackUp = {
     name: '',
     class: '',
     sex: '',
@@ -40,7 +56,7 @@ const playerObject = {
 
 
 const traits = [ 
-    [0, 0, 0, 0, ''], 
+    ['debug', 'debug', 'debug', 'debug', 'debug'], 
     [-2, +2, 'cha', 'str', 'Lonely'], 
     [-2, +2, 'con', 'int', 'Smart'],  
     [-2, +2, 'str', 'cha', 'Funny']

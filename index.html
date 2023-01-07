@@ -81,7 +81,9 @@
             <div class='text-alice txt-align-center font-L max-width'>
                 
                 <div class="flex borderHorizontal">
-                    <img src="raw arts/mage2Face.png" class="faceArt"> <!--imagem-->
+                    <div id="imgFace"> <!--imagem-->
+                        <img src="" class="faceArt">
+                    </div> <!--imagem-->
                         <div class="txt-alignLeft">
                             <h4 style="color:rgb(123, 126, 126)" id="nameDisplay">Name:</h4>
                             <h4>Sex: Femele</h4>
@@ -141,14 +143,31 @@
                     </div>
                 </div>
                 <div class="margin10"></div> <!--divide os dois textos-->
-                
-                <p  class="margin10 font-XL next-btn text-alice" onclick="charaterCreationPart2()"> Next</p>         
+                <div id="divError"></div>
+                <p  class="margin10 font-XL next-btn text-alice" onclick="charaterCreationPart3()"> Next</p>         
            
             </div>
         </div>
 
     </div>
-</div> <!--Part 2-->
+</div> <!--Part 3-->
+
+<div id='partFour' class='displayNone'>
+    <div class="flex jus-center">
+        <div class="bg-darkGrey heightMax ">
+            <div class='text-alice txt-align-center font-L max-width'>
+                Choose a Background:
+                <img src="raw arts/01background.png" style="border: 1px solid rgb(7, 7, 7)">
+                <img src="raw arts/01background.png" style="border: 1px solid rgb(7, 7, 7)">
+                <img src="raw arts/01background.png" style="border: 1px solid rgb(7, 7, 7)">
+                <img src="raw arts/01background.png" style="border: 1px solid rgb(7, 7, 7)">
+                <img src="raw arts/01background.png" style="border: 1px solid rgb(7, 7, 7)">
+            </div>
+        </div>
+
+    </div>
+</div> <!--Part 4-->
+
 
 </body>
 <script src="objects.js"></script>

@@ -1,6 +1,6 @@
 sexMale = true;
 let globalChoice = '';
-charaterCreationPart2('mage', 'female')
+
 
 
 function newGame(){
@@ -107,15 +107,42 @@ function charaterCreationPart1(choice) {
     d.innerHTML = '<p  class="margin10 font-XL next-btn" onclick="charaterCreationPart2(' + "'" + choice + "'" + " ,'" + gender + "'" + ')">Next</p>'
 }
 function charaterCreationPart2(choice, gender) {
-    let newGame = document.getElementById('newGame'); //deletar depois :D
-    newGame.style.display = 'none'; //deletar depois :D
+    let partTwo = document.getElementById('partTwo');
+    partTwo.style.display = 'none'; 
     let partThree = document.getElementById('partThree'); //deletar depois :D
     partThree.style.display = 'block'; //deletar depois :D
-    playerObject['class'] = choice; 
-    playerObject['sex'] = gender; 
+    playerObject.class = choice; 
+    playerObject.sex = gender; 
     debugStats()
+    delete playerObject.debug;
     console.log(playerObject)
     statschange()
+
+    let face = document.getElementById('imgFace')
+
+        switch(choice){
+            case 'barbarian':
+                gender == 'male'? face.innerHTML = "<img src='raw arts/barbarianFace.png' class='faceArt'>": face.innerHTML =  "<img src='raw arts/barbarian2Face.png' class='faceArt'>";
+                gender == 'male'? playerObject.Portrait = "<img src='raw arts/barbarianFace.png' class='faceArt'>": playerObject.Portrait = "<img src='raw arts/barbarian2Face.png' class='faceArt'>";
+                gender == 'male'? playerObject.fullArt = "<img src='raw arts/barbarian.png'>": playerObject.fullArt = "<img src='raw arts/barbarian2.png'>";
+                break;
+            case 'warrior':
+                gender === 'male'? face.innerHTML = "<img src='raw arts/battlecryFace.png' class='faceArt'>" : face.innerHTML =  "<img src='raw arts/battlecry2Face.png' class='faceArt'>";
+                gender == 'male'? playerObject.Portrait = "<img src='raw arts/battlecryFace.png' class='faceArt'>": playerObject.Portrait = "<img src='raw arts/battlecry2Face.png' class='faceArt'>";
+                gender == 'male'? playerObject.fullArt = "<img src='raw arts/battlecry.png'>": playerObject.fullArt = "<img src='raw arts/battlecry2.png'>";
+                break;
+            case 'mage':
+            gender == 'male'? face.innerHTML = "<img src='raw arts/mageFace.png' class='faceArt'>": face.innerHTML =  "<img src='raw arts/mage2Face.png' class='faceArt'>";
+            gender == 'male'? playerObject.Portrait = "<img src='raw arts/mageFace.png' class='faceArt'>": playerObject.Portrait = "<img src='raw arts/mage2Face.png' class='faceArt'>";
+            gender == 'male'? playerObject.fullArt = "<img src='raw arts/mage.png'>": playerObject.fullArt = "<img src='raw arts/mage2.png'>";
+            break;
+        }
+    
+
+
+
+
+
 
     // logic for subclasses // -------------------------------------------------------------------
     let subclasses = document.getElementById('subHTML')
@@ -330,10 +357,6 @@ switch(value){
 }
 }
 
-
-
-
-
 function debugStats() {
 
     choice = playerObject.class
@@ -368,8 +391,72 @@ function debugStats() {
 
 }
 
+
+function debugStats2() {
+
+    choice = playerObject.class
+    console.log(choice)
+    switch(choice){
+        case 'barbarian':
+            playerObject.str = 4;
+            playerObject.dex = 2;
+            playerObject.con = 4;
+            playerObject.int = 0;
+            playerObject.wis = 2; 
+            playerObject.cha = 0;
+            break;
+        case 'warrior':
+            playerObject.str = 2;
+            playerObject.dex = 2;
+            playerObject.con = 2;
+            playerObject.int = 1;
+            playerObject.wis = 2; 
+            playerObject.cha = 3;
+            break;
+        case 'mage':
+            playerObject.str = 0;
+            playerObject.dex = 1;
+            playerObject.con = 1;
+            playerObject.int = 4;
+            playerObject.wis = 3; 
+            playerObject.cha = 3;
+            break;
+        }
+
+}
+
 function sexClick(sex) {
     sex == 'male' ? sexMale = true : sexMale = false;
     charaterCreationPart1(globalChoice)
+
+}
+
+charaterCreationPart3()
+
+function charaterCreationPart3() {
+error = document.getElementById('divError')
+
+if(playerObject.name == ''){ 
+    error.innerHTML = "<div class='font-S' style='color: red; margin: 0px;'>Please choose a name to your character</div>"
+} 
+else if(playerObject.trait == ''){ 
+    error.innerHTML = "<div class='font-S' style='color: red; margin: 0px;'>Please choose a trait to your character</div>"
+} 
+else if(playerObject.subclass == ''){ 
+    error.innerHTML = "<div class='font-S' style='color: red; margin: 0px;'>Please choose a sub-class to your character</div>"
+} 
+else{ 
+    let newGame = document.getElementById('newGame'); // deletar depois :D
+    newGame.style.display = 'none'; // deletar depois :D
+    let partThree = document.getElementById('partThree'); 
+    partThree.style.display = 'none'; 
+    let partFour = document.getElementById('partFour'); 
+    partFour.style.display = 'block'; 
+}
+
+
+
+
+
 
 }
