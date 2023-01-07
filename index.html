@@ -83,7 +83,7 @@
                 <div class="flex borderHorizontal">
                     <img src="raw arts/mage2Face.png" class="faceArt"> <!--imagem-->
                         <div class="txt-alignLeft">
-                            <h4 style="color:rgb(123, 126, 126)">Name:</h4>
+                            <h4 style="color:rgb(123, 126, 126)" id="nameDisplay">Name:</h4>
                             <h4>Sex: Femele</h4>
                             <h4>Class: Mage</h4> 
                             <h4 style="color:rgb(123, 126, 126)">Sub-Class:</h4> 
@@ -94,8 +94,8 @@
 
 
                 <div class="margin10 borderHorizontal"> <!--stats-->
-                    <input class="input-style-one margin2" placeholder="Choose Your Name"> 
-                    <button class="">Enter</button></h4>
+                    <input class="input-style-one margin2" placeholder="Choose Your Name" id='inputName'> 
+                    <button class="" id="btnname" onclick = 'nameBTNCall()'>Enter</button></h4>
                 </div>
 
 
@@ -104,20 +104,31 @@
                             Base character stats:
                         </div> 
                     <div class='flex jus-center font-S' style="gap: 3px;">
-                        <div class="squareattributes">Str: 2</div>
-                        <div class="squareattributes">Dex: 2</div>
-                        <div class="squareattributes">Con: 2</div>
-                        <div class="squareattributes">Int: 2</div>
-                        <div class="squareattributes">Wis: 2</div>
-                        <div class="squareattributes">Cha: 2</div>
+                        <div class="squareattributes" onmouseover="(statsExplaMouseOver(0))">Str: 2</div>
+                        <div class="squareattributes" onmouseover="(statsExplaMouseOver(1))">Dex: 2</div>
+                        <div class="squareattributes" onmouseover="(statsExplaMouseOver(2))">Con: 2</div>
+                        <div class="squareattributes" onmouseover="(statsExplaMouseOver(3))">Int: 2</div>
+                        <div class="squareattributes" onmouseover="(statsExplaMouseOver(4))">Wis: 2</div>
+                        <div class="squareattributes" onmouseover="(statsExplaMouseOver(5))">Cha: 2</div>
                     </div>
-                    <div style="font-size: 15px; margin-top: 10px;">
-                        Strenght: Being able to crush a tomatoes!
+                    <div style="font-size: 15px; margin-top: 10px;" id='statsExplanation'>
+                        Click in the stats for an explanation 
                     </div>
                         <div style="margin: 10px;"></div>
 
-                </div>
 
+                        <div class="font-S">
+                            <select>
+                                <option value="0">Select Trait:</option>
+                                <option value="1">Lazy: -2 // Str + 2 Dex</option>
+                                <option value="2">Smart</option>
+                                <option value="2">Anxious</option>
+                                <option value="2">4 Eyes</option>
+                                </select>
+                            
+                        </div>
+                        <div class="margin2"></div>
+                </div>
                 
                 <div class="borderHorizontal ">
                     <div class="">
@@ -134,25 +145,8 @@
                     </div>
                 </div>
                 <div class="margin10"></div> <!--divide os dois textos-->
-                <div class="borderHorizontal ">
-
-                    <div class="font-S" style="text-align:center">
-                        <select>
-                            <option value="0">Select Trait:</option>
-                            <option value="1">Lazy: -2 // Str + 2 Dex</option>
-                            <option value="2">Smart</option>
-                            <option value="2">Anxious</option>
-                            <option value="2">4 Eyes</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-           
-           
-                    <p  class="margin10 font-XL next-btn" onclick="charaterCreationPart2()"> Next</p>
-
-           
-           
+                
+                <p  class="margin10 font-XL next-btn text-alice" onclick="charaterCreationPart2()"> Next</p>         
            
             </div>
         </div>

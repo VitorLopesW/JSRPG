@@ -111,12 +111,38 @@ function charaterCreationPart2(choice, gender) {
     newGame.style.display = 'none'; //deletar depois :D
     let partThree = document.getElementById('partThree'); //deletar depois :D
     partThree.style.display = 'block'; //deletar depois :D
-    playerObject['Class'] = choice; 
-    playerObject['sex'] = gender; 
+    playerObject['class'] = choice; 
+    playerObject['Sex'] = gender; 
     console.log(playerObject)
 
 
 }
+
+function nameBTNCall() { // Choosen Name in character Creator 
+            display = document.getElementById('nameDisplay')
+            input = document.getElementById('inputName').value
+
+            if(input != ''){
+            display.innerHTML = "<div style='color: aliceblue'>" + 'Name: ' + input + "</div>"; 
+            playerObject['name'] = input;
+            console.log(playerObject)
+            }
+            else{
+                display.innerHTML = "<div style='color: #d73a3a'>" + 'Name: ' + 'Error' + "</div>";
+            }
+}
+
+function statsExplaMouseOver(i) {
+let display = document.getElementById('statsExplanation')
+
+display.innerText = charTomatoes[i]
+
+}
+
+
+
+
+
 
 function sexClick(sex) {
     sex == 'male' ? sexMale = true : sexMale = false;
