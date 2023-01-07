@@ -86,15 +86,15 @@
                             <h4 style="color:rgb(123, 126, 126)" id="nameDisplay">Name:</h4>
                             <h4>Sex: Femele</h4>
                             <h4>Class: Mage</h4> 
-                            <h4 style="color:rgb(123, 126, 126)">Sub-Class:</h4> 
-                            <h4 style="color:rgb(123, 126, 126)" id="displayTraits">Traits: lazy</h4>
+                            <h4 style="color:rgb(123, 126, 126)" id="displaySC">Sub-Class:</h4> 
+                            <h4 style="color:rgb(123, 126, 126)" id="displayTraits">Traits:</h4>
                         </div>
 
                 </div> 
 
 
                 <div class="margin10 borderHorizontal"> <!--stats-->
-                    <input class="input-style-one margin2" placeholder="Choose Your Name" id='inputName'> 
+                    <input class="input-style-one margin2" placeholder="Choose Your Name" id='inputName' onchange= 'nameBTNCall()'>
                     <button class="" id="btnname" onclick = 'nameBTNCall()'>Enter</button></h4>
                 </div>
 
@@ -103,7 +103,7 @@
                         <div style="margin-bottom: 4px;">
                             Base character stats:
                         </div> 
-                    <div class='flex jus-center font-S' style="gap: 3px;">
+                    <div class='flex jus-center font-S' style="gap: 3px; margin: 10px">
                         <div class="squareattributes" onmouseover="(statsExplaMouseOver(0))" id="strN">Str: 2</div>
                         <div class="squareattributes" onmouseover="(statsExplaMouseOver(1))" id="dexN">Dex: 2</div>
                         <div class="squareattributes" onmouseover="(statsExplaMouseOver(2))" id="conN">Con: 2</div>
@@ -130,17 +130,14 @@
                 </div>
                 
                 <div class="borderHorizontal ">
-                    <div class="">
-                        <select>
-                        <option value="0">Select Sub-Class:</option>
-                        <option value="1">Battle-Wizard</option>
-                        <option value="2">Nature-Wizard</option>
+                    <div class="margin2">
+                        <select  onchange="subClass(value)" id="subHTML">
+
                         </select>
                     </div>
-                    <div class="margin10"></div> <!--class divide selector and the text-->
+                    <div class="margin2"></div> <!--class divide selector and the text-->
                     <div class="font-S" style="text-align: justify;">
-                        <p>As a battle wizard um have bonus in charisma and dex 
-                            if you can save a roll and you opponent can not you win </p>
+                        <p style="margin: 2px; margin-left: 10px; margin-right: 10px;" id="subClassText"> </p>
                     </div>
                 </div>
                 <div class="margin10"></div> <!--divide os dois textos-->

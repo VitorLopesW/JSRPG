@@ -1,5 +1,7 @@
 
-
+body{
+    font-family:'Times New Roman', Times, serif;
+}
 .class-btn {
     width: 100px;
     height: 100px;

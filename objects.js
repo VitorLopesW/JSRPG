@@ -43,5 +43,5 @@ const traits = [
     [0, 0, 0, 0, ''], 
     [-2, +2, 'cha', 'str', 'Lonely'], 
     [-2, +2, 'con', 'int', 'Smart'],  
-    [-2, +2, 'str', 'Cha', 'Funny']
+    [-2, +2, 'str', 'cha', 'Funny']
 ]

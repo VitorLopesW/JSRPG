@@ -112,11 +112,38 @@ function charaterCreationPart2(choice, gender) {
     let partThree = document.getElementById('partThree'); //deletar depois :D
     partThree.style.display = 'block'; //deletar depois :D
     playerObject['class'] = choice; 
-    playerObject['Sex'] = gender; 
+    playerObject['sex'] = gender; 
     debugStats()
     console.log(playerObject)
     statschange()
 
+    // logic for subclasses // -------------------------------------------------------------------
+    let subclasses = document.getElementById('subHTML')
+    switch(choice){
+        case 'barbarian': subclasses.innerHTML= '<option value="0">Select Sub-Class:</option>' +
+        '<option value="Furious">Furious</option>' +
+        '<option value="Savage">Savage</option>';
+        break;
+
+        case 'warrior':  subclasses.innerHTML= '<option value="0">Select Sub-Class:</option>' +
+        '<option value="Scout">Scout</option>' +
+        '<option value="Rebel">Rebel</option>';
+        break;
+
+        case 'mage': 
+        subclasses.innerHTML= '<option value="0">Select Sub-Class:</option>' +
+        '<option value="Battle-Wizard">Battle-Wizard</option>' +
+        '<option value="Icy-Wizard">Icy-Wizard</option>';
+
+
+
+
+        break;
+
+    }
+    
+
+    // edd of logic of subclasses  -------------------------------------------------------------------
 }
 
 function nameBTNCall() { // Choosen Name in character Creator 
@@ -150,8 +177,9 @@ console.log(playerObject[traits[i][2]] )
     console.log(playerObject)
     statschange()
 let displayT = document.getElementById('displayTraits')
-displayT.innerHTML = "<div style='color: aliceblue;'>Traits: " + traits[i][4] +'</div>';
 
+traits[i][4] == 0 ? displayT.innerHTML = "<div>Traits: " + traits[i][4] +'</div>': displayT.innerHTML = "<div style='color: aliceblue;'>Traits: " + traits[i][4] +'</div>';
+playerObject.trait = traits[i][4]
 }
 
 function statschange(){
@@ -279,7 +307,28 @@ function statschange(){
 
 }
 
+function subClass(value){
+let a = document.getElementById('subClassText')
+let b = document.getElementById('displaySC')
 
+switch(value){
+    case '0': a.innerText = '';
+    playerObject.subclass = '';
+    b.innerHTML = "<div>Sub-Class:</div>";
+    break;
+    case 'Battle-Wizard':
+    a.innerText = 'Forget the classic wizardry, you are a a Battle-Mage you will start with one spell of destruction randomly, a longsword (2d8 +3 of damage). Use intelligence in melee combat instead strength'
+    playerObject.subclass = 'battleWizard';
+    b.innerHTML = "<div style='color: aliceblue;'>Sub-Class: Battle-Wizard</div>";
+    break;
+    case 'Icy-Wizard': 
+    a.innerText = 'As a Icy-Wizard you will start with one destruction ice spell (frost: 2d8 + 3), any Icy Spell use half of the mana rounded down! And if use any ice based magic you will roll with advantag (rolls 2 dies, use the highest number)';
+    b.innerHTML = "<div style='color: aliceblue;'>Sub-Class: Icy-Wizard</div>";
+    playerObject.subclass = 'icyWizard';
+    break;
+
+}
+}
 
 
 
