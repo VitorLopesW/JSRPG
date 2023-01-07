@@ -56,3 +56,15 @@
     width: 200px;
     
 }
+
+.squareattributes {
+    width: 200px;
+    height: 26px;
+    background-color: rgb(44, 44, 44);
+}
+
+.squareattributes:hover, .squareattributesActive {
+    background-color: rgba(235, 246, 255, 0.247);
+    border: 1px solid aliceblue;
+    transition: none;
+}
