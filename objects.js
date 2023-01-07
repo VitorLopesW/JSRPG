@@ -28,12 +28,20 @@ const playerObject = {
     name: '',
     class: '',
     sex: '',
-    str: '',
-    dex: '',
-    con: '', 
-    int: '',
-    wis: '',
-    cha: '',
+    str: 0,
+    dex: 0,
+    con: 0, 
+    int: 0,
+    wis: 0,
+    cha: 0,
     subclass: '',
     trait: '',
 }
+
+
+const traits = [ 
+    [0, 0, 0, 0, ''], 
+    [-2, +2, 'cha', 'str', 'Lonely'], 
+    [-2, +2, 'con', 'int', 'Smart'],  
+    [-2, +2, 'str', 'Cha', 'Funny']
+]

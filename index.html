@@ -87,7 +87,7 @@
                             <h4>Sex: Femele</h4>
                             <h4>Class: Mage</h4> 
                             <h4 style="color:rgb(123, 126, 126)">Sub-Class:</h4> 
-                            <h4 style="color:rgb(123, 126, 126)">Traits: lazy</h4>
+                            <h4 style="color:rgb(123, 126, 126)" id="displayTraits">Traits: lazy</h4>
                         </div>
 
                 </div> 
@@ -104,12 +104,12 @@
                             Base character stats:
                         </div> 
                     <div class='flex jus-center font-S' style="gap: 3px;">
-                        <div class="squareattributes" onmouseover="(statsExplaMouseOver(0))">Str: 2</div>
-                        <div class="squareattributes" onmouseover="(statsExplaMouseOver(1))">Dex: 2</div>
-                        <div class="squareattributes" onmouseover="(statsExplaMouseOver(2))">Con: 2</div>
-                        <div class="squareattributes" onmouseover="(statsExplaMouseOver(3))">Int: 2</div>
-                        <div class="squareattributes" onmouseover="(statsExplaMouseOver(4))">Wis: 2</div>
-                        <div class="squareattributes" onmouseover="(statsExplaMouseOver(5))">Cha: 2</div>
+                        <div class="squareattributes" onmouseover="(statsExplaMouseOver(0))" id="strN">Str: 2</div>
+                        <div class="squareattributes" onmouseover="(statsExplaMouseOver(1))" id="dexN">Dex: 2</div>
+                        <div class="squareattributes" onmouseover="(statsExplaMouseOver(2))" id="conN">Con: 2</div>
+                        <div class="squareattributes" onmouseover="(statsExplaMouseOver(3))" id="intN">Int: 2</div>
+                        <div class="squareattributes" onmouseover="(statsExplaMouseOver(4))" id="wisN">Wis: 2</div>
+                        <div class="squareattributes" onmouseover="(statsExplaMouseOver(5))" id="chaN">Cha: 2</div>
                     </div>
                     <div style="font-size: 15px; margin-top: 10px;" id='statsExplanation'>
                         Click in the stats for an explanation 
@@ -118,12 +118,11 @@
 
 
                         <div class="font-S">
-                            <select>
+                            <select id="selector" onchange="selectLogic(value)">
                                 <option value="0">Select Trait:</option>
-                                <option value="1">Lazy: -2 // Str + 2 Dex</option>
-                                <option value="2">Smart</option>
-                                <option value="2">Anxious</option>
-                                <option value="2">4 Eyes</option>
+                                <option value="1">Lonely: -2 Cha // + 2 Str</option>
+                                <option value="2">Smart: -2 Con // + 2 Int</option>
+                                <option value="3">Funny: -2 Str // + 2 Cha</option>
                                 </select>
                             
                         </div>
@@ -133,7 +132,7 @@
                 <div class="borderHorizontal ">
                     <div class="">
                         <select>
-                        <option value="0">SelectS Sub-Class:</option>
+                        <option value="0">Select Sub-Class:</option>
                         <option value="1">Battle-Wizard</option>
                         <option value="2">Nature-Wizard</option>
                         </select>

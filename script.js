@@ -113,8 +113,9 @@ function charaterCreationPart2(choice, gender) {
     partThree.style.display = 'block'; //deletar depois :D
     playerObject['class'] = choice; 
     playerObject['Sex'] = gender; 
+    debugStats()
     console.log(playerObject)
-
+    statschange()
 
 }
 
@@ -132,10 +133,149 @@ function nameBTNCall() { // Choosen Name in character Creator
             }
 }
 
-function statsExplaMouseOver(i) {
+function statsExplaMouseOver(i) { // stats 
 let display = document.getElementById('statsExplanation')
 
 display.innerText = charTomatoes[i]
+
+}
+
+function selectLogic(i) {
+debugStats()
+console.log(playerObject[traits[i][2]] )
+    console.log(traits[i][2])
+    console.log(traits[i][0])
+        playerObject[traits[i][2]] += traits[i][0];
+        playerObject[traits[i][3]] += traits[i][1];
+    console.log(playerObject)
+    statschange()
+let displayT = document.getElementById('displayTraits')
+displayT.innerHTML = "<div style='color: aliceblue;'>Traits: " + traits[i][4] +'</div>';
+
+}
+
+function statschange(){
+    let strSC = document.getElementById('strN')
+    let dexSC = document.getElementById('dexN')
+    let conSC = document.getElementById('conN')
+    let intSC = document.getElementById('intN')
+    let wisSC = document.getElementById('wisN')
+    let chaSC = document.getElementById('chaN')
+
+    color('str')
+    color('dex')
+    color('con')
+    color('int')
+    color('wis')
+    color('cha')
+
+    function color(x){
+        x1 = x.charAt(0).toUpperCase() + x.slice(1);
+        if(x=='str'){
+            if(playerObject[x] >= 0 && playerObject[x] < 3 ){
+                strSC.innerHTML = "<div>" + x1 + ": " + playerObject[x] + "</div>";
+                }
+            else if(playerObject[x] > 2 && playerObject[x] < 5) {
+                strSC.innerHTML = "<div style='color: #779775;'>" + x1+ ": " + playerObject[x] + "</div>";
+                }
+                else if(playerObject[x] > 4) {
+                strSC.innerHTML = "<div style='color: #3eca37;'>" + x1 + ": " + playerObject[x] + "</div>";
+            }
+            else if(playerObject[x] < 0 && playerObject[x] > -3 ) {
+                strSC.innerHTML = "<div style='color: #af4055;'>" + x1+ ": " + playerObject[x] + "</div>";
+            }
+                else if(playerObject[x] < -2) {
+                strSC.innerHTML = "<div style='color: #cc1919;'>" + x1 + ": " + playerObject[x] + "</div>";
+            }
+        }
+        else if(x=='dex'){
+            if(playerObject[x] >= 0 && playerObject[x] < 3 ){
+                dexSC.innerHTML = "<div>" + x1 + ": " + playerObject[x] + "</div>";
+                }
+            else if(playerObject[x] > 2 && playerObject[x] < 5) {
+                dexSC.innerHTML = "<div style='color: #779775;'>" + x1+ ": " + playerObject[x] + "</div>";
+                }
+                else if(playerObject[x] > 4) {
+                dexSC.innerHTML = "<div style='color: #3eca37;'>" + x1 + ": " + playerObject[x] + "</div>";
+            }
+            else if(playerObject[x] < 0 && playerObject[x] > -3 ) {
+                dexSC.innerHTML = "<div style='color: #af4055;'>" + x1+ ": " + playerObject[x] + "</div>";
+            }
+                else if(playerObject[x] < -2) {
+                dexSC.innerHTML = "<div style='color: #cc1919;'>" + x1 + ": " + playerObject[x] + "</div>";
+            }
+        }
+        else if(x=='con'){
+            if(playerObject[x] >= 0 && playerObject[x] < 3 ){
+                conSC.innerHTML = "<div>" + x1 + ": " + playerObject[x] + "</div>";
+                }
+            else if(playerObject[x] > 2 && playerObject[x] < 5) {
+                conSC.innerHTML = "<div style='color: #779775;'>" + x+ ": " + playerObject[x] + "</div>";
+                }
+                else if(playerObject[x] > 4) {
+                conSC.innerHTML = "<div style='color: #3eca37;'>" + x + ": " + playerObject[x] + "</div>";
+            }
+            else if(playerObject[x] < 0 && playerObject[x] > -3 ) {
+                conSC.innerHTML = "<div style='color: #af4055;'>" + x+ ": " + playerObject[x] + "</div>";
+            }
+                else if(playerObject[x] < -2) {
+                conSC.innerHTML = "<div style='color: #cc1919;'>" + x + ": " + playerObject[x] + "</div>";
+            }
+        }
+        else if(x=='int'){
+            if(playerObject[x] >= 0 && playerObject[x] < 3 ){
+                intSC.innerHTML = "<div>" + x1 + ": " + playerObject[x] + "</div>";
+                }
+            else if(playerObject[x] > 2 && playerObject[x] < 5) {
+                intSC.innerHTML = "<div style='color: #779775;'>" + x1+ ": " + playerObject[x] + "</div>";
+                }
+                else if(playerObject[x] > 4) {
+                intSC.innerHTML = "<div style='color: #3eca37;'>" + x1 + ": " + playerObject[x] + "</div>";
+            }
+            else if(playerObject[x] < 0 && playerObject[x] > -3 ) {
+                intSC.innerHTML = "<div style='color: #af4055;'>" + x1+ ": " + playerObject[x] + "</div>";
+            }
+                else if(playerObject[x] < -2) {
+                intSC.innerHTML = "<div style='color: #cc1919;'>" + x1 + ": " + playerObject[x] + "</div>";
+            }
+        }
+        else if(x=='wis'){
+            if(playerObject[x] >= 0 && playerObject[x] < 3 ){
+                wisSC.innerHTML = "<div>" + x1 + ": " + playerObject[x] + "</div>";
+                }
+            else if(playerObject[x] > 2 && playerObject[x] < 5) {
+                wisSC.innerHTML = "<div style='color: #779775;'>" + x1+ ": " + playerObject[x] + "</div>";
+                }
+                else if(playerObject[x] > 4) {
+                wisSC.innerHTML = "<div style='color: #3eca37;'>" + x1 + ": " + playerObject[x] + "</div>";
+            }
+            else if(playerObject[x] < 0 && playerObject[x] > -3 ) {
+                wisSC.innerHTML = "<div style='color: #af4055;'>" + x1+ ": " + playerObject[x] + "</div>";
+            }
+                else if(playerObject[x] < -2) {
+                wisSC.innerHTML = "<div style='color: #cc1919;'>" + x1 + ": " + playerObject[x] + "</div>";
+            }
+        }
+        else if(x=='cha'){
+            if(playerObject[x] >= 0 && playerObject[x] < 3 ){
+                chaSC.innerHTML = "<div>" + x1 + ": " + playerObject[x] + "</div>";
+                }
+            else if(playerObject[x] > 2 && playerObject[x] < 5) {
+                chaSC.innerHTML = "<div style='color: #779775;'>" + x1+ ": " + playerObject[x] + "</div>";
+                }
+                else if(playerObject[x] > 4) {
+                chaSC.innerHTML = "<div style='color: #3eca37;'>" + x1 + ": " + playerObject[x] + "</div>";
+            }
+            else if(playerObject[x] < 0 && playerObject[x] > -3 ) {
+                chaSC.innerHTML = "<div style='color: #af4055;'>" + x1+ ": " + playerObject[x] + "</div>";
+            }
+                else if(playerObject[x] < -2) {
+                chaSC.innerHTML = "<div style='color: #cc1919;'>" + x1 + ": " + playerObject[x] + "</div>";
+            }
+        }1
+
+    }
+
 
 }
 
@@ -143,6 +283,41 @@ display.innerText = charTomatoes[i]
 
 
 
+
+
+function debugStats() {
+
+    choice = playerObject.class
+    console.log(choice)
+    switch(choice){
+        case 'barbarian':
+            playerObject.str = 4;
+            playerObject.dex = 2;
+            playerObject.con = 4;
+            playerObject.int = 0;
+            playerObject.wis = 2; 
+            playerObject.cha = 0;
+            break;
+        case 'warrior':
+            playerObject.str = 2;
+            playerObject.dex = 2;
+            playerObject.con = 2;
+            playerObject.int = 1;
+            playerObject.wis = 2; 
+            playerObject.cha = 3;
+            break;
+        case 'mage':
+            console.log('debug')
+            playerObject.str = 0;
+            playerObject.dex = 1;
+            playerObject.con = 1;
+            playerObject.int = 4;
+            playerObject.wis = 3; 
+            playerObject.cha = 3;
+            break;
+        }
+
+}
 
 function sexClick(sex) {
     sex == 'male' ? sexMale = true : sexMale = false;
