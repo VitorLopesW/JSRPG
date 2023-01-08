@@ -123,17 +123,17 @@ function charaterCreationPart2(choice, gender) {
         switch(choice){
             case 'barbarian':
                 gender == 'male'? face.innerHTML = "<img src='raw arts/barbarianFace.png' class='faceArt'>": face.innerHTML =  "<img src='raw arts/barbarian2Face.png' class='faceArt'>";
-                gender == 'male'? playerObject.Portrait = "<img src='raw arts/barbarianFace.png' class='faceArt'>": playerObject.Portrait = "<img src='raw arts/barbarian2Face.png' class='faceArt'>";
+                gender == 'male'? playerObject.Portrait = "<img src='raw arts/barbarianFace.png'>": playerObject.Portrait = "<img src='raw arts/barbarian2Face.png'>";
                 gender == 'male'? playerObject.fullArt = "<img src='raw arts/barbarian.png'>": playerObject.fullArt = "<img src='raw arts/barbarian2.png'>";
                 break;
             case 'warrior':
                 gender === 'male'? face.innerHTML = "<img src='raw arts/battlecryFace.png' class='faceArt'>" : face.innerHTML =  "<img src='raw arts/battlecry2Face.png' class='faceArt'>";
-                gender == 'male'? playerObject.Portrait = "<img src='raw arts/battlecryFace.png' class='faceArt'>": playerObject.Portrait = "<img src='raw arts/battlecry2Face.png' class='faceArt'>";
+                gender == 'male'? playerObject.Portrait = "<img src='raw arts/battlecryFace.png'>": playerObject.Portrait = "<img src='raw arts/battlecry2Face.png'>";
                 gender == 'male'? playerObject.fullArt = "<img src='raw arts/battlecry.png'>": playerObject.fullArt = "<img src='raw arts/battlecry2.png'>";
                 break;
             case 'mage':
             gender == 'male'? face.innerHTML = "<img src='raw arts/mageFace.png' class='faceArt'>": face.innerHTML =  "<img src='raw arts/mage2Face.png' class='faceArt'>";
-            gender == 'male'? playerObject.Portrait = "<img src='raw arts/mageFace.png' class='faceArt'>": playerObject.Portrait = "<img src='raw arts/mage2Face.png' class='faceArt'>";
+            gender == 'male'? playerObject.Portrait = "<img src='raw arts/mageFace.png'>": playerObject.Portrait = "<img src='raw arts/mage2Face.png'>";
             gender == 'male'? playerObject.fullArt = "<img src='raw arts/mage.png'>": playerObject.fullArt = "<img src='raw arts/mage2.png'>";
             break;
         }
@@ -338,6 +338,24 @@ function subClass(value){
 let a = document.getElementById('subClassText')
 let b = document.getElementById('displaySC')
 
+
+    switch(playerObject.class){
+        case 'barbarian':
+                playerInventory['Rusty Axe'] = [0]
+            break;
+        case 'warrior':
+                playerInventory['Rusty Sword']  = [0]
+                playerInventory['Leather Armor'] = [0]
+            break;
+        case 'mage':
+                playerInventory.wand = [0]
+                playerInventory['Light Clothes'] = [0]
+                playerMagic['Magic Missil'] = [0]
+            break;
+    }
+
+
+
 switch(value){
     case '0': a.innerText = '';
     playerObject.subclass = '';
@@ -352,6 +370,7 @@ switch(value){
     a.innerText = 'As a Icy-Wizard you will start with one destruction ice spell (frost: 2d8 + 3), any Icy Spell use half of the mana rounded down! And if use any ice based magic you will roll with advantag (rolls 2 dies, use the highest number)';
     b.innerHTML = "<div style='color: aliceblue;'>Sub-Class: Icy-Wizard</div>";
     playerObject.subclass = 'icyWizard';
+    playerMagic['Frost'] = [0]
     break;
 
 }
@@ -431,8 +450,6 @@ function sexClick(sex) {
 
 }
 
-charaterCreationPart3()
-
 function charaterCreationPart3() {
 error = document.getElementById('divError')
 
@@ -446,17 +463,235 @@ else if(playerObject.subclass == ''){
     error.innerHTML = "<div class='font-S' style='color: red; margin: 0px;'>Please choose a sub-class to your character</div>"
 } 
 else{ 
-    let newGame = document.getElementById('newGame'); // deletar depois :D
-    newGame.style.display = 'none'; // deletar depois :D
+    
     let partThree = document.getElementById('partThree'); 
     partThree.style.display = 'none'; 
     let partFour = document.getElementById('partFour'); 
     partFour.style.display = 'block'; 
 }
+    let d1 = document.getElementById('backgroundD')
+    let d2 = document.getElementById('backgroundD2')
+    let d3 = document.getElementById('backgroundD3')
+
+    d1.innerHTML = leftArray[0]
+    d2.innerHTML = rightArray[1]
+    d3.innerHTML = leftArray[1]
+
+}
+
+function backgroundChoosed(x) { // organizando todo os objetos 
+
+switch(x){
+    case 'noble':
+        playerObject.background = 'Noble';
+        playerObject.gold = 100 + 50;
+        playerObject.cha += 2;
+        playerInventory['Paladin Armor'] = [0]
+        playerMagic['Magic Hands'] = [0]
+
+        break;
+    case 'servant':
+        playerObject.background = 'Servant';
+        playerObject.gold = 5;
+        playerObject.str += 2;
+        playerObject.dex += 2;
+        playerObject.con += 2;
+        break;
+    case 'paladindynasty':
+        playerObject.background = 'Paladin Dynasty';
+        
+}
+
+playerObject.xp =  0;
+playerObject.level = 1;
+playerObject.quest = 1;
+
+console.log(playerObject)
+console.log(playerInventory)
+console.log(playerMagic)
+gameStart()
+}
+gameStart()
+
+function gameStart(){
+ let newGame = document.getElementById('newGame'); // deletar depois :D
+newGame.style.display = 'none'; // deletar depois :D
+
+let partFour = document.getElementById('partFour'); 
+partFour.style.display = 'none'; 
+
+let ga = document.getElementById('game'); 
+ga.style.display = 'block'; 
+
+menuUpdate()
+
+}
+function menuUpdate() {
+
+    /// html 
+        menuHead = document.getElementById('menuHeader')
+        menuHead.innerHTML = '<div class="flex"> <div style="margin-top: 2px; width:100px; height: 100px;" >' + playerObject.Portrait + '</div>' + "<div style = 'width: 280px'>" +
+        /// Texto do menu 
+            '<div style="text-align: left">' +
+            '<div class="borderHorizontal">' + 
+            ' Name: ' + playerObject.name + ' | Level: ' + playerObject.level + " |  XP: " + playerObject.xp + "</div>" +
+            "<div style='margin:'></div>" +
+            "<div class='flex'><div class='borderHorizontal'>" + 
+            " Gold: " + playerObject.gold + " | Quests: 0" + "</div>" + 
+            "</div>" + 
+         /// Texto do menu 
+            "</div>" + 
+                    '<div class="flex" style="gap: 2px; margin: 10px; font-size: 13px">' +
+                        '<div class="squareattributes2"  id="strN1">Str: 2</div>' +
+                        '<div class="squareattributes2" id="dexN1">Dex: 2</div>' +
+                        '<div class="squareattributes2" id="conN1">Con: 2</div>' +
+                        '<div class="squareattributes2" id="intN1">Int: 2</div>' +
+                        '<div class="squareattributes2" id="wisN1">Wis: 2</div>' +
+                        '<div class="squareattributes2" id="chaN1">Cha: 2</div>' +
+                    '</div>' +
+                    "</div>" ;
+                menuHead.innerHTML += '<div class="flex" style="justify-content: space-between; gap:5px">' + 
+                '<div class="square3" onclick="pop-up(menu)">Menu</div>' +
+                '<div class="square3" onclick="pop-up(inventory)">Inventory</div>' +
+                '<div class="square3" onclick="pop-up(spell)">Spell List</div>' 
+                
+
+
+
+
+
+let strSC = document.getElementById('strN1')
+let dexSC = document.getElementById('dexN1')
+let conSC = document.getElementById('conN1')
+let intSC = document.getElementById('intN1')
+let wisSC = document.getElementById('wisN1')
+let chaSC = document.getElementById('chaN1')
+
+color('str')
+color('dex')
+color('con')
+color('int')
+color('wis')
+color('cha')
+
+function color(x){
+    x1 = x.charAt(0).toUpperCase() + x.slice(1);
+    if(x=='str'){
+        if(playerObject[x] >= 0 && playerObject[x] < 3 ){
+            strSC.innerHTML = "<div>" + x1 + ": " + playerObject[x] + "</div>";
+            }
+        else if(playerObject[x] > 2 && playerObject[x] < 5) {
+            strSC.innerHTML = "<div style='color: #779775;'>" + x1+ ": " + playerObject[x] + "</div>";
+            }
+            else if(playerObject[x] > 4) {
+            strSC.innerHTML = "<div style='color: #3eca37;'>" + x1 + ": " + playerObject[x] + "</div>";
+        }
+        else if(playerObject[x] < 0 && playerObject[x] > -3 ) {
+            strSC.innerHTML = "<div style='color: #af4055;'>" + x1+ ": " + playerObject[x] + "</div>";
+        }
+            else if(playerObject[x] < -2) {
+            strSC.innerHTML = "<div style='color: #cc1919;'>" + x1 + ": " + playerObject[x] + "</div>";
+        }
+    }
+    else if(x=='dex'){
+        if(playerObject[x] >= 0 && playerObject[x] < 3 ){
+            dexSC.innerHTML = "<div>" + x1 + ": " + playerObject[x] + "</div>";
+            }
+        else if(playerObject[x] > 2 && playerObject[x] < 5) {
+            dexSC.innerHTML = "<div style='color: #779775;'>" + x1+ ": " + playerObject[x] + "</div>";
+            }
+            else if(playerObject[x] > 4) {
+            dexSC.innerHTML = "<div style='color: #3eca37;'>" + x1 + ": " + playerObject[x] + "</div>";
+        }
+        else if(playerObject[x] < 0 && playerObject[x] > -3 ) {
+            dexSC.innerHTML = "<div style='color: #af4055;'>" + x1+ ": " + playerObject[x] + "</div>";
+        }
+            else if(playerObject[x] < -2) {
+            dexSC.innerHTML = "<div style='color: #cc1919;'>" + x1 + ": " + playerObject[x] + "</div>";
+        }
+    }
+    else if(x=='con'){
+        if(playerObject[x] >= 0 && playerObject[x] < 3 ){
+            conSC.innerHTML = "<div>" + x1 + ": " + playerObject[x] + "</div>";
+            }
+        else if(playerObject[x] > 2 && playerObject[x] < 5) {
+            conSC.innerHTML = "<div style='color: #779775;'>" + x+ ": " + playerObject[x] + "</div>";
+            }
+            else if(playerObject[x] > 4) {
+            conSC.innerHTML = "<div style='color: #3eca37;'>" + x + ": " + playerObject[x] + "</div>";
+        }
+        else if(playerObject[x] < 0 && playerObject[x] > -3 ) {
+            conSC.innerHTML = "<div style='color: #af4055;'>" + x+ ": " + playerObject[x] + "</div>";
+        }
+            else if(playerObject[x] < -2) {
+            conSC.innerHTML = "<div style='color: #cc1919;'>" + x + ": " + playerObject[x] + "</div>";
+        }
+    }
+    else if(x=='int'){
+        if(playerObject[x] >= 0 && playerObject[x] < 3 ){
+            intSC.innerHTML = "<div>" + x1 + ": " + playerObject[x] + "</div>";
+            }
+        else if(playerObject[x] > 2 && playerObject[x] < 5) {
+            intSC.innerHTML = "<div style='color: #779775;'>" + x1+ ": " + playerObject[x] + "</div>";
+            }
+            else if(playerObject[x] > 4) {
+            intSC.innerHTML = "<div style='color: #3eca37;'>" + x1 + ": " + playerObject[x] + "</div>";
+        }
+        else if(playerObject[x] < 0 && playerObject[x] > -3 ) {
+            intSC.innerHTML = "<div style='color: #af4055;'>" + x1+ ": " + playerObject[x] + "</div>";
+        }
+            else if(playerObject[x] < -2) {
+            intSC.innerHTML = "<div style='color: #cc1919;'>" + x1 + ": " + playerObject[x] + "</div>";
+        }
+    }
+    else if(x=='wis'){
+        if(playerObject[x] >= 0 && playerObject[x] < 3 ){
+            wisSC.innerHTML = "<div>" + x1 + ": " + playerObject[x] + "</div>";
+            }
+        else if(playerObject[x] > 2 && playerObject[x] < 5) {
+            wisSC.innerHTML = "<div style='color: #779775;'>" + x1+ ": " + playerObject[x] + "</div>";
+            }
+            else if(playerObject[x] > 4) {
+            wisSC.innerHTML = "<div style='color: #3eca37;'>" + x1 + ": " + playerObject[x] + "</div>";
+        }
+        else if(playerObject[x] < 0 && playerObject[x] > -3 ) {
+            wisSC.innerHTML = "<div style='color: #af4055;'>" + x1+ ": " + playerObject[x] + "</div>";
+        }
+            else if(playerObject[x] < -2) {
+            wisSC.innerHTML = "<div style='color: #cc1919;'>" + x1 + ": " + playerObject[x] + "</div>";
+        }
+    }
+    else if(x=='cha'){
+        if(playerObject[x] >= 0 && playerObject[x] < 3 ){
+            chaSC.innerHTML = "<div>" + x1 + ": " + playerObject[x] + "</div>";
+            }
+        else if(playerObject[x] > 2 && playerObject[x] < 5) {
+            chaSC.innerHTML = "<div style='color: #779775;'>" + x1+ ": " + playerObject[x] + "</div>";
+            }
+            else if(playerObject[x] > 4) {
+            chaSC.innerHTML = "<div style='color: #3eca37;'>" + x1 + ": " + playerObject[x] + "</div>";
+        }
+        else if(playerObject[x] < 0 && playerObject[x] > -3 ) {
+            chaSC.innerHTML = "<div style='color: #af4055;'>" + x1+ ": " + playerObject[x] + "</div>";
+        }
+            else if(playerObject[x] < -2) {
+            chaSC.innerHTML = "<div style='color: #cc1919;'>" + x1 + ": " + playerObject[x] + "</div>";
+        }
+    }1
+
+}
+
+
+
+
+        
 
 
 
 
 
 
+
+
+    /// html
 }
