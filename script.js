@@ -524,7 +524,7 @@ let ga = document.getElementById('game');
 ga.style.display = 'block'; 
 
 menuUpdate()
-
+quest()
 }
 function menuUpdate() {
 
@@ -694,4 +694,24 @@ function color(x){
 
 
     /// html
+}
+
+
+function quest(){
+game = document.getElementById('text')
+
+game.innerHTML = "<p style= 'margin: 15px'>"  +
+"The small town of Highdale was a quiet and peaceful place, nestled in the rolling hills of the countryside. It was the kind of place where everyone knew everyone else, and everyone looked out for one another. So when little Lucy, the daughter of the town's most important merchant, went missing one evening, the whole town was in a state of panic."
++"</p>" 
++"<img src='raw arts/kidArt.png' class='borderHorizontal'>" +
+"<p style= 'margin: 15px'>"  +
+"The small town of Highdale was a quiet and peaceful place, nestled in the rolling hills of the countryside. It was the kind of place where everyone knew everyone else, and everyone looked out for one another. So when little Lucy, the daughter of the town's most important merchant, went missing one evening, the whole town was in a state of panic. The small town of Highdale was a quiet and peaceful place, nestled in the rolling hills of the countryside. It was the kind of place where everyone knew everyone else, and everyone looked out for one another. So when little Lucy, the daughter of the town's most important merchant, went missing one evening, the whole town was in a state of panic."
++"</p>" +
+"<p style= 'margin: 15px'>"  +
+"The small town of Highdale was a quiet and peaceful place, nestled in the rolling hills of the countryside. It was the kind of place where everyone knew everyone else, and everyone looked out for one another. So when little Lucy, the daughter of the town's most important merchant, went missing one evening, the whole town was in a state of panic."
++"</p>" 
+
+
+
+
 }
