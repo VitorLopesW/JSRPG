@@ -800,7 +800,7 @@ function A01(k) { //
         "<p>The woman explained that she had heard stories of bandits preying on travelers and villagers alike, and that it was not uncommon for people to disappear without a trace. She expressed her concern for the safety of the missing girl, and hoped that she would be found soon." +
         "<p>An old man approached you, he listened carefully as you listened to the various rumors about the missing girl." +
         '<p>And the the old man offered a different theory. "Maybe it was them orcs," he said gruffly. '+"I've heard tell of them beasts roaming these parts, and they're known to eat folks alive." +
-        "<p>You are not sure if you believe any of these theories, but you are determined to continue searching until searching until you find the missing girl." + ""
+        "<p>You are not sure if you believe any of these theories, but you are determined to continue searching until searching until you find the missing girl."  
 
     }
 }    
@@ -846,11 +846,11 @@ function A01Chat(t) {
                         "<p style= 'margin: 3px'>" +"</p>" + "<div id= 'checkPoint2'><div>" 
                         window.scrollTo(0, document.body.scrollHeight);
     
-                    }, "testSwitch")
-                }, "testSwitch")
-            }, "testSwitch")
-        }, "testSwitch")
- }, "testStart")
+                    }, testSwitch)
+                }, testSwitch)
+            }, testSwitch)
+        }, testSwitch)
+ }, testStart)
       
     
 
