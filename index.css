@@ -121,3 +121,13 @@ body{
     height: 30px;
     background-color: rgb(44, 44, 44);
 }
+
+.options {
+    width: auto;
+    height: auto;
+    background-color: rgb(44, 44, 44);
+    border: 3px solid rgb(17, 17, 17);
+    text-align: center;
+    text-indent: 0px;
+
+}

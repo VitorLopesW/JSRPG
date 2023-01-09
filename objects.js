@@ -47,6 +47,7 @@ const charTomatoes = [
 const playerObject = {
         "name": "Davian",
         "class": "mage",
+        'background': 'Servant',
         "sex": "male",
         "str": 0,
         "dex": 1,

@@ -515,7 +515,7 @@ console.log(playerInventory)
 console.log(playerMagic)
 gameStart()
 } /// fim crianção personagem
-
+gameStart()
 
 function gameStart(){
  let newGame = document.getElementById('newGame'); // deletar depois :D
@@ -719,22 +719,61 @@ switch (A){
 }
 
 
-function quest01A(){
-    
+function quest01A(){////
+
  game.innerHTML = "<p style= 'margin: 15px'>"  +
 "Belle Ville was a small, peaceful town nestled in the countryside hills. Most of the people there worked hard, but were generally happy. One unusual day, the daughter of one of the town's wealthiest barons disappeared without a trace. The entire town searched for the girl, but no one could find her."
 +"</p>" 
 +"<img src='raw arts/kidArt.png' class='borderHorizontal'>" + // img 
+"<p style= 'margin: 15px'></p>"  + /// margin
+"<p>As the days passed, the town of Belle Ville was in a state of panic. The disappearance of the baron's daughter had everyone on edge, and the search for the missing girl had turned up no leads." +
+"<p>The town's people were at a loss for what to do. Some suggested hiring a group of mercenaries to help with the search, while others thought it best to wait and hope that the girl would turn up on her own." +
+"<p>Meanwhile, the baron was beside himself with worry. He offered a generous reward to anyone who could bring his daughter home safely. Despite the reward, no one seemed to have any information about the girl's whereabouts." +
+ "<p>As the days turned into weeks, the town's people began to lose hope." +
 "<p style= 'margin: 15px'>"  + /// margin
-"As the days passed, the town of Belle Ville was in a state of panic. The disappearance of the baron's daughter had everyone on edge, and the search for the missing girl had turned up no leads." +
-    "The town's people were at a loss for what to do. Some suggested hiring a group of mercenaries to help with the search, while others thought it best to wait and hope that the girl would turn up on her own." +
-        "Meanwhile, the baron was beside himself with worry. He offered a generous reward to anyone who could bring his daughter home safely. Despite the reward, no one seemed to have any information about the girl's whereabouts." +
-    "As the days turned into weeks, the town's people began to lose hope." +
-"<p style= 'margin: 15px'>"  + /// margin
-" That's where your story begins. Nine days have passed since the child's disappearance. What will you do? "
-"<p style= 'margin: 15px'>" +"</p>"  /// margin
-}
+" That's where your story begins. Nine days have passed since the child's disappearance. What will you do? " +
+"<p style= 'margin: 15px'>" +"</p>" +
+"<div id='optionHere'></div>"
+OptionGame(01)
+
+function OptionGame(x){///
+derby = 'a'
+optionDisplay = document.getElementById('optionHere');
+optionDisplay.innerHTML +=  
+"<div class='options' onclick = A01("+'"a"'+") id='optionA' >" + "Go to the tavern ask information" + '</div>' +
+"<p style= 'margin: 3px'>" +"</p>" 
+
+optionDisplay.innerHTML +=  
+"<div class='options' onclick='A01()' id='optionA' >" + "(Cha Test): Talk to the town Folks" + '</div>' +
+"<p style= 'margin: 3px'>" +"</p>" 
+
+optionDisplay.innerHTML +=  
+"<div class='options' onclick='option(A)' id='optionA' >" + "(Wis Test): Search for Clues" + '</div>' +
+"<p style= 'margin: 3px'>" +"</p>" 
+
+playerObject.background == 'noble'? optionDisplay.innerHTML +=  "<div class='options' onclick='option(A)' id='optionA' >" + "(Noble): Go talk with the Baron" + '</div>' :
+optionDisplay.innerHTML +=  "<div class='options' style='color: grey' >" + "(Noble): Go talk with the Baron" + '</div>';
+}///
+} //
+}////
+
+function A01(k) { //
+
+    switch (k){
+        case 'a': console.log('aoi');
+            game.innerHTML = ""
+            optionDisplay.innerHTML = "" 
+             game.innerHTML = "<p style= 'margin: 15px'>"  + 
+             "As " + playerObject.name +" walked through the streets of Belle Ville, they couldn't help but feel a sense of despair hanging heavy in the air. It had been weeks since the baron's daughter had gone missing, and still, there were no leads on her whereabouts."
 
 
 
-}
+
+
+
+
+
+
+        break;
+    }
+}    
