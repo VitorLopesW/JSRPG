@@ -515,6 +515,7 @@ console.log(playerInventory)
 console.log(playerMagic)
 gameStart()
 } /// fim crianção personagem
+gameStart()
 
 function gameStart(){
  let newGame = document.getElementById('newGame'); // deletar depois :D
@@ -732,11 +733,12 @@ function quest01A(){////
 "<p style= 'margin: 15px'>"  + /// margin
 " That's where your story begins. Nine days have passed since the child's disappearance. What will you do? " +
 "<p style= 'margin: 15px'>" +"</p>" +
+"<div class='borderHorizontalOne margin10'></div>" +
 "<div id='optionHere'></div>"
 OptionGame(01)
 
 function OptionGame(x){///
-derby = 'a'
+
 optionDisplay = document.getElementById('optionHere');
 optionDisplay.innerHTML +=  
 "<div class='options' onclick = A01("+'"a"'+") id='optionA' >" + "Go to the tavern ask information" + '</div>' +
@@ -750,7 +752,7 @@ optionDisplay.innerHTML +=
 "<div class='options' onclick='option(A)' id='optionA' >" + "(Wis Test): Search for Clues" + '</div>' +
 "<p style= 'margin: 3px'>" +"</p>" 
 
-playerObject.background == 'noble'? optionDisplay.innerHTML +=  "<div class='options' onclick='option(A)' id='optionA' >" + "(Noble): Go talk with the Baron" + '</div>' :
+playerObject.background == 'Noble'? optionDisplay.innerHTML +=  "<div class='options' onclick='option(A)' id='optionA' >" + "(Noble): Go talk with the Baron" + '</div>' :
 optionDisplay.innerHTML +=  "<div class='options' style='color: grey' >" + "(Noble): Go talk with the Baron" + '</div>';
 }///
 } //
@@ -760,19 +762,105 @@ function A01(k) { //
 
     switch (k){
         case 'a': console.log('aoi');
-            game.innerHTML = ""
-            optionDisplay.innerHTML = "" 
-             game.innerHTML = "<p style= 'margin: 15px'>"  + 
-             "As " + playerObject.name +" walked through the streets of Belle Ville, they couldn't help but feel a sense of despair hanging heavy in the air. It had been weeks since the baron's daughter had gone missing, and still, there were no leads on her whereabouts." +
-            "Determined to find some kind of clue, the protagonist made their way to the local tavern, hoping to gather any information that might be helpful in the search for the missing girl." 
+            
+        optionDisplay.innerHTML =  
+        "<div class='options' id='optionA' style='color: grey'  >" + "Go to the tavern ask information" + '</div>' +
+        "<p style= 'margin: 3px'>" +"</p>" 
+             game.innerHTML += "<p style= 'margin: 15px'></p>"  + 
+             "<p>As " + playerObject.name +" walked through the streets of Belle Ville, they couldn't help but feel a sense of despair hanging heavy in the air. It had been weeks since the baron's daughter had gone missing, and still, there were no leads on her whereabouts." +
+            "<P> Determined to find some kind of clue, " + playerObject.name +" made their way to the local tavern, hoping to gather any information that might be helpful in the search for the missing girl." +
+            "<p> Upon entering the Tavern, " + playerObject.name +" was greeted by the warm glow of candlelight and the sound of laughter and conversation. They made their way to the bar and took a seat, hoping to blend in with the crowd and listen for any mentions of the missing girl." +
+            "<p> The bartender, a friendly man with a bushy beard and kind eyes, approached " + playerObject.name +"  and..." + 
+            "<p style= 'margin: 15px'>" +"</p>" +
+            "<div class='borderHorizontalOne margin10'></div>" +
+            "<div id='optionHere2'></div>"
 
+            optionDisplay = document.getElementById('optionHere2');
 
-
-
-
-
-
-
+            optionDisplay.innerHTML +=  "<div class='options' onclick = A01Chat("+'"chatOne"'+") id='optionA' >" + "Start a Chat" + '</div>' +
+"<p style= 'margin: 3px'>" +"</p>" 
         break;
+        case 'a2' :
+        document.getElementById('option3').style = "color: grey"
+        checkpoint02 = document.getElementById('checkPoint2')
+        checkpoint02.innerHTML =  "<p style= 'margin: 30px'></p>" +
+        "<div class='borderHorizontalOne'></div>" +
+        "<p>As you sat at the bar, you struck up a conversation with the people around you, asking if they had any information about the missing girl or any ideas about where she might have gone." + 
+        "<p style= 'margin: 15px'></p>" +
+        "<img src='raw arts/textArt/peapleABar.png' class='borderHorizontal'>" + 
+        "<p style= 'margin: 15px'></p>" +
+        "<p>You spoke with one of the patrons at the establishment, a middle-aged man seated at one of the tables. He had a thick beard and a gruff voice, and seemed to be deep in thought. You decided to approach him and struck up a conversation." +
+        "<p>The man introduced himself as a regular patron at the establishment, and mentioned that he had heard several rumors about the missing girl who had recently disappeared from the town. He told you that some people believe that the girl was taken by the forest spirits, and added a wink to suggest that he did not necessarily believe this theory." +
+        "<p>However, the man expressed his belief that the girl might have run off with a secret lover. He mentioned that there had been rumors of a young man who was seen with the girl on several occasions, and that he personally thought it was likely that the two might have eloped together." +
+        "<p>As you continued to speak with the patrons at the bar, a young woman with long blonde hair and a kind smile approached you. She introduced herself and listened attentively as you shared the various rumors that you had heard about the missing girl."+
+        "<p style= 'margin: 15px'></p>" +
+        "<img src='raw arts/textArt/blondeLadyAtBar.png' class='borderHorizontal'>" + 
+        "<p style= 'margin: 15px'></p>" +
+        "<p>After considering what you had told her, the woman offered a different theory. She believed that it was more likely that the girl had been taken by bandits, citing the recent reports of increased bandit activity in the area." +
+        "<p>The woman explained that she had heard stories of bandits preying on travelers and villagers alike, and that it was not uncommon for people to disappear without a trace. She expressed her concern for the safety of the missing girl, and hoped that she would be found soon." +
+        "<p>An old man approached you, he listened carefully as you listened to the various rumors about the missing girl." +
+        '<p>And the the old man offered a different theory. "Maybe it was them orcs," he said gruffly. '+"I've heard tell of them beasts roaming these parts, and they're known to eat folks alive." +
+        "<p>You are not sure if you believe any of these theories, but you are determined to continue searching until searching until you find the missing girl."
+
     }
 }    
+
+function A01Chat(t) {
+    optionDisplay = document.getElementById('optionHere2');
+    let testStart = '2000'; // Normal 2000
+    let testSwitch = '4000'; // Normal 4000
+
+    switch(t) {
+        case 'chatOne': 
+    game = document.getElementById('text')
+
+    optionDisplay.innerHTML =  "<div class='options' id='optionA' style='color: grey'>" + "Start a Chat" + '</div>' +
+"<p style= 'margin: 3px'>" +"</p>" 
+
+    setTimeout(() => {
+        optionDisplay.innerHTML += "<p style= 'margin: 30px'></p>"  +
+        "<div class='chatLeft'>" +
+        "Hello, pal! Would ye like somethin' tae drink? I've got a fine Northern ale here if ye fancy it!"
+        +"</div>" 
+        window.scrollTo(0, document.body.scrollHeight);
+        setTimeout(() => {
+             optionDisplay.innerHTML += "<div class='flexNo'><div class='debugRight'></div><div class='chatRight'>" +
+             "I apologize for not being here for a drink. I am more interested in finding out about the missing girl."
+             +"</div><div>" 
+             window.scrollTo(0, document.body.scrollHeight);
+             setTimeout(() => {
+                optionDisplay.innerHTML += "<div class='chatLeft'>" +
+                "Apologies, mate. I'm afraid I don't know anythin' about the disappearance o' Lady Sophie."
+                +"</div>" 
+                window.scrollTo(0, document.body.scrollHeight);
+                setTimeout(() => {
+                    optionDisplay.innerHTML += "<div class='chatLeft'>" +
+                    "Take a look around ye, lad. There might be someone in this tavern who knows somethin' about the lassie. We've got quite a lively crowd here tonight, it's sure tae be an interesting evening."
+                    +"</div>"  
+                    window.scrollTo(0, document.body.scrollHeight);
+                    setTimeout(() => {
+                        optionDisplay.innerHTML += "<div class='chatLeft'>" +
+                        "Mebbe Cassie could help ye out. She's a sharp lass, but I've got me doubts about whether ye'll find young Lady Sophie alive at this point. It's been quite a few days now, after all."
+                        +"</div>" + "<p style= 'margin: 30px'></p>"  +
+                        "<div class='options' onclick = A01("+'"a2"'+") id='option3'>" + "End of Conversation" + '</div>' +
+                        "<p style= 'margin: 3px'>" +"</p>" + "<div id= 'checkPoint2'><div>" 
+                        window.scrollTo(0, document.body.scrollHeight);
+    
+                    }, "testSwitch")
+                }, "testSwitch")
+            }, "testSwitch")
+        }, "testSwitch")
+ }, "testStart")
+      
+    
+
+
+
+
+
+
+
+
+ 
+    }
+}

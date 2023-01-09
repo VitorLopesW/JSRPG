@@ -72,6 +72,15 @@
     
 }
 
+.borderHorizontalOne {
+    border-top: none!important;
+    border-width: 1px;
+    border-style: solid;
+    border-image: linear-gradient(90deg, hsl( var(--clr-darkGrey) ), aliceblue, hsl( var(--clr-darkGrey) ));
+    border-image-slice: 1;
+    
+}
+
 .font-S {
     font-size: 18px
 }
@@ -121,3 +130,5 @@ border: 2px solid hsl( var(--clr-dark) );
 .text-indent {
     text-indent: 50px;
   }
+
+  

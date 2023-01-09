@@ -131,3 +131,42 @@ body{
     text-indent: 0px;
 
 }
+
+.chatLeft {
+    width: 80%;
+    height: auto;
+    background-color: rgb(236, 236, 236);
+    border: 2px solid rgb(31, 31, 31);
+    color:rgb(17, 17, 17);
+    text-align: center;
+    text-indent: 0px;
+    border-radius: 10px;
+    border-bottom-left-radius: 0px;
+    font-style: italic;
+    padding: 5px;
+
+}
+
+.chatRight {
+    width: 80%;
+    height: auto;
+    background-color: rgb(236, 236, 236);
+    border: 2px solid rgb(31, 31, 31);
+    color:rgb(17, 17, 17);
+    text-align: center;
+    text-indent: 0px;
+    border-radius: 10px;
+    border-bottom-right-radius: 0px;
+    font-style: italic;
+    padding: 5px;
+
+}
+
+.debugRight {
+    width: 20%;
+}
+
+.flexNo {
+    display: flex;
+    gap: none!important;
+}
