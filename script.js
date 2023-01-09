@@ -515,7 +515,7 @@ console.log(playerInventory)
 console.log(playerMagic)
 gameStart()
 } /// fim crianção personagem
-gameStart()
+
 
 function gameStart(){
  let newGame = document.getElementById('newGame'); // deletar depois :D
@@ -764,8 +764,8 @@ function A01(k) { //
             game.innerHTML = ""
             optionDisplay.innerHTML = "" 
              game.innerHTML = "<p style= 'margin: 15px'>"  + 
-             "As " + playerObject.name +" walked through the streets of Belle Ville, they couldn't help but feel a sense of despair hanging heavy in the air. It had been weeks since the baron's daughter had gone missing, and still, there were no leads on her whereabouts."
-
+             "As " + playerObject.name +" walked through the streets of Belle Ville, they couldn't help but feel a sense of despair hanging heavy in the air. It had been weeks since the baron's daughter had gone missing, and still, there were no leads on her whereabouts." +
+            "Determined to find some kind of clue, the protagonist made their way to the local tavern, hoping to gather any information that might be helpful in the search for the missing girl." 
 
 
 
