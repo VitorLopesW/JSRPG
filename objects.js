@@ -112,3 +112,4 @@ const traits = [
     [-2, +2, 'str', 'cha', 'Funny']
 ]
 
+const invtest = [["<img src='raw arts/inventory/paladim armor.png'>", "paladim armor"], 1, 2, 3, 4,]

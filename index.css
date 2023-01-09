@@ -82,3 +82,35 @@ body{
     height: 30px;
     background-color: rgb(44, 44, 44);
 }
+
+.squareinv {
+
+    width: 120px;
+    height: 120px;
+    background-color: rgb(44, 44, 44);
+}
+
+.inventoryGrid{
+    padding-top: 10px!important;
+    padding-bottom: 10px!important;
+    padding: 2px;
+    gap: 15px;
+    justify-items:center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+}
+
+.squareinv2 {
+
+    border: 1px solid rgb(17, 17, 17);
+    width: 60px;
+    height: 30px;
+    background-color: rgb(44, 44, 44);
+}
+.squareinv3 {
+
+    border: 1px solid rgb(17, 17, 17);
+    width: 320px;
+    height: 30px;
+    background-color: rgb(44, 44, 44);
+}

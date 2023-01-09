@@ -12,7 +12,6 @@
 </head>
 <body class='bg-black'>
 
-
     <div onclick="newGame()" class="text-alice txt-align-center font-L" id='newGame'>New Game?</div>
 <div id='partOne' class='displayNone'>
         <link rel="preload" as="image" href="raw arts\barbarian.png"> <!--Preload character arts-->
@@ -169,18 +168,20 @@
 </div> <!--Part 4-->
 
 
+
+
+
 <div id='game' class='displayNone'>
     <div class="flex jus-center">
         <div class="bg-darkGrey heightMax ">
             <div class='text-alice txt-align-center font-L max-width'>
                 <div class="fixed backgroundColorDark"><div id="menuHeader" class=""></div></Div>
                     <div style="height: 158px; width: inheritance;"></div>
-                         <div id="text" style="font-size: 17px; text-align: justify;" class='borderHorizontal text-indent'>     
+                        <div id='menu'></div> 
+                        <div id="text" style="font-size: 17px; text-align: justify; display: block;" class='borderHorizontal text-indent'>     
                             
                        
-                       
-                       
-                       
+                           
                          </div>
              </div>
         </div>
@@ -190,6 +191,7 @@
 
 
 </body>
+<script src="menus.js"></script>
 <script src="objects.js"></script>
 <script src="Script.js"></script>
 </html>

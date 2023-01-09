@@ -551,9 +551,9 @@ function menuUpdate() {
                     '</div>' +
                     "</div>" ;
                 menuHead.innerHTML += '<div class="flex" style="justify-content: space-between; gap:5px">' + 
-                '<div class="square3" onclick="pop-up(menu)">Menu</div>' +
-                '<div class="square3" onclick="pop-up(inventory)">Inventory</div>' +
-                '<div class="square3" onclick="pop-up(spell)">Spell List</div>' 
+                '<div class="square3" onclick="popUpA()">Menu</div>' +
+                '<div class="square3" onclick="popUpB()">Inventory</div>' +
+                '<div class="square3" onclick="popUpC()">Spell List</div>' 
                 
 
 
@@ -700,7 +700,21 @@ function color(x){
 function quest(){
 game = document.getElementById('text')
 
-game.innerHTML = "<p style= 'margin: 15px'>"  +
+A = Math.floor(Math.random() * 2);
+
+
+console.log(A)
+switch (A){
+    case 0:
+        quest01A()
+        break;
+
+}
+
+
+function quest01A(){
+    
+ game.innerHTML = "<p style= 'margin: 15px'>"  +
 "The small town of Highdale was a quiet and peaceful place, nestled in the rolling hills of the countryside. It was the kind of place where everyone knew everyone else, and everyone looked out for one another. So when little Lucy, the daughter of the town's most important merchant, went missing one evening, the whole town was in a state of panic."
 +"</p>" 
 +"<img src='raw arts/kidArt.png' class='borderHorizontal'>" +
@@ -711,6 +725,7 @@ game.innerHTML = "<p style= 'margin: 15px'>"  +
 "The small town of Highdale was a quiet and peaceful place, nestled in the rolling hills of the countryside. It was the kind of place where everyone knew everyone else, and everyone looked out for one another. So when little Lucy, the daughter of the town's most important merchant, went missing one evening, the whole town was in a state of panic."
 +"</p>" 
 
+}
 
 
 
