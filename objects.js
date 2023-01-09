@@ -61,7 +61,9 @@ const playerObject = {
         "subclass": "icyWizard",
         "trait": "Smart",
         "Portrait": "<img src='raw arts/mageFace.png'>",
-        "fullArt": "<img src='raw arts/mage.png'>"
+        "fullArt": "<img src='raw arts/mage.png'>",
+        'mana': 20,
+        'health': 13,
 
 }
 
@@ -112,4 +114,11 @@ const traits = [
     [-2, +2, 'str', 'cha', 'Funny']
 ]
 
-const invtest = [["<img src='raw arts/inventory/paladim armor.png'>", "paladim armor", 'exist'], 1, 2, 3, 4,]
+const invtest = [
+    ["<img src='raw arts/inventory/paladim armor.png'>", "Paladim Armor",'Type: Armor // (+10 Defense)', 'exist'], 
+    ["<img src='raw arts/inventory/Leather Armor.png'>", "Leather Armor",'Type: Armor // (+5 Defense)', 'exist', 'armor', 5]]
+
+    const globalItemList = [
+        ["<img src='raw arts/inventory/paladim armor.png'>", "Paladim Armor",'Type: Armor // (+10 Defense)', 'exist', 'armor', 10], 
+        ["<img src='raw arts/inventory/Leather Armor.png'>", "Leather Armor",'Type: Armor // (+5 Defense)', 'exist', 'armor', 5], 
+        2, 3, 4,]

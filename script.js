@@ -505,13 +505,17 @@ switch(x){
 playerObject.xp =  0;
 playerObject.level = 1;
 playerObject.quest = 1;
+let hp = (playerObject.con * 3) + 16;
+playerObject.health = hp;
+let manaPoints = (playerObject.int * 2) + 5;
+playerObject.mana = manaPoints;
 
 console.log(playerObject)
 console.log(playerInventory)
 console.log(playerMagic)
 gameStart()
-}
-gameStart()
+} /// fim crianção personagem
+
 
 function gameStart(){
  let newGame = document.getElementById('newGame'); // deletar depois :D
@@ -528,6 +532,9 @@ quest()
 }
 function menuUpdate() {
 
+    
+
+
     /// html 
         menuHead = document.getElementById('menuHeader')
         menuHead.innerHTML = '<div class="flex"> <div style="margin-top: 2px; width:100px; height: 100px;" >' + playerObject.Portrait + '</div>' + "<div style = 'width: 280px'>" +
@@ -537,7 +544,7 @@ function menuUpdate() {
             ' Name: ' + playerObject.name + ' | Level: ' + playerObject.level + " |  XP: " + playerObject.xp + "</div>" +
             "<div style='margin:'></div>" +
             "<div class='flex'><div class='borderHorizontal'>" + 
-            " Gold: " + playerObject.gold + " | Quests: 0" + "</div>" + 
+            " Gold: " + playerObject.gold + " |  <span style='color:red'> HP: "+ playerObject.health + "</span> | <span style='color:#3597c0'> Mana: " + playerObject.mana + "</div>" + 
             "</div>" + 
          /// Texto do menu 
             "</div>" + 
@@ -700,7 +707,7 @@ function color(x){
 function quest(){
 game = document.getElementById('text')
 
-A = Math.floor(Math.random() * 2);
+A = Math.floor(Math.random() * 1);
 
 
 console.log(A)
@@ -715,16 +722,17 @@ switch (A){
 function quest01A(){
     
  game.innerHTML = "<p style= 'margin: 15px'>"  +
-"The small town of Highdale was a quiet and peaceful place, nestled in the rolling hills of the countryside. It was the kind of place where everyone knew everyone else, and everyone looked out for one another. So when little Lucy, the daughter of the town's most important merchant, went missing one evening, the whole town was in a state of panic."
+"Belle Ville was a small, peaceful town nestled in the countryside hills. Most of the people there worked hard, but were generally happy. One unusual day, the daughter of one of the town's wealthiest barons disappeared without a trace. The entire town searched for the girl, but no one could find her."
 +"</p>" 
-+"<img src='raw arts/kidArt.png' class='borderHorizontal'>" +
-"<p style= 'margin: 15px'>"  +
-"The small town of Highdale was a quiet and peaceful place, nestled in the rolling hills of the countryside. It was the kind of place where everyone knew everyone else, and everyone looked out for one another. So when little Lucy, the daughter of the town's most important merchant, went missing one evening, the whole town was in a state of panic. The small town of Highdale was a quiet and peaceful place, nestled in the rolling hills of the countryside. It was the kind of place where everyone knew everyone else, and everyone looked out for one another. So when little Lucy, the daughter of the town's most important merchant, went missing one evening, the whole town was in a state of panic."
-+"</p>" +
-"<p style= 'margin: 15px'>"  +
-"The small town of Highdale was a quiet and peaceful place, nestled in the rolling hills of the countryside. It was the kind of place where everyone knew everyone else, and everyone looked out for one another. So when little Lucy, the daughter of the town's most important merchant, went missing one evening, the whole town was in a state of panic."
-+"</p>" 
-
++"<img src='raw arts/kidArt.png' class='borderHorizontal'>" + // img 
+"<p style= 'margin: 15px'>"  + /// margin
+"As the days passed, the town of Belle Ville was in a state of panic. The disappearance of the baron's daughter had everyone on edge, and the search for the missing girl had turned up no leads." +
+    "The town's people were at a loss for what to do. Some suggested hiring a group of mercenaries to help with the search, while others thought it best to wait and hope that the girl would turn up on her own." +
+        "Meanwhile, the baron was beside himself with worry. He offered a generous reward to anyone who could bring his daughter home safely. Despite the reward, no one seemed to have any information about the girl's whereabouts." +
+    "As the days turned into weeks, the town's people began to lose hope." +
+"<p style= 'margin: 15px'>"  + /// margin
+" That's where your story begins. Nine days have passed since the child's disappearance. What will you do? "
+"<p style= 'margin: 15px'>" +"</p>"  /// margin
 }
 
 
