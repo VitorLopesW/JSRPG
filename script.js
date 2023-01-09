@@ -516,7 +516,6 @@ console.log(playerMagic)
 gameStart()
 } /// fim crianção personagem
 
-
 function gameStart(){
  let newGame = document.getElementById('newGame'); // deletar depois :D
 newGame.style.display = 'none'; // deletar depois :D
